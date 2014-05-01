@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#CCC"
+    android:orientation="vertical" >
+
+    <Button
+        android:id="@+id/button_info"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="InfoDialog" />
+
+    <Button
+        android:id="@+id/button_executing"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Executing" />
+
+    <Button
+        android:id="@+id/button_progress"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Progress" />
+
+    <Button
+        android:id="@+id/button_confirm"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Confirm" />
+
+    <Button
+        android:id="@+id/button_input"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="input" />
+
+    <Button
+        android:id="@+id/button_web_req"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="网络访问" />
+    
+    <Button
+        android:id="@+id/button_flip"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="Flip" />
+    
+    <Button
+        android:id="@+id/button_exit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="下一层级" />
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content" >
+
+        <CheckBox
+            android:id="@+id/chk_bpsp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="断点续传" />
+
+        <Button
+            android:id="@+id/btn_download"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:text="下载" />
+
+        <Button
+            android:id="@+id/button_stop"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="停止" />
+
+        <TextView
+            android:id="@+id/text_state"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0%"
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+    </LinearLayout>
+
+    <ProgressBar
+        android:id="@+id/progress"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:max="100" />
+
+    <Button
+        android:id="@+id/btn_update"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="更新" />
+
+    <EditText
+        android:id="@+id/editText1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10" >
+
+        <requestFocus />
+    </EditText>
+
+</LinearLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ff0654"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent" >
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/btn_test_dlg"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="测试对话框" />
+
+        <Button
+            android:id="@+id/btn_filp_test"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="测试翻转" />
+        
+        <Button
+            android:id="@+id/btn_module_test"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="测试模式视图" />
+
+        <EditText
+            android:id="@+id/editText1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" >
+
+            <requestFocus />
+        </EditText>
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10" />
+
+        <Button
+            android:id="@+id/button_rminput"
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Remove Input" />
+
+    </LinearLayout>
+
+</ScrollView>
