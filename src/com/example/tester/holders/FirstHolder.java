@@ -26,7 +26,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 				R.id.btn_test_dlg,
 				R.id.btn_filp_test,
 				R.id.btn_module_test,
-				R.id.button_rminput
+				R.id.btn_dialog_test
 				);
 		
 		getNavigationBar().setTitle("测试首页");
@@ -49,12 +49,9 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 			moduleTestViewHolder.showAsModuleView(true);
 //			((ViewGroup)getActivity().getRootViewHolder().getView()).addView(moduleTestViewHolder.getView());
 			break;
-		case R.id.button_rminput:
-//			((ViewGroup)((ViewGroup)getView()).getChildAt(0)).removeView(find(R.id.editText1));
-//			InputMethodManager inputMethodManager=(InputMethodManager) getActivity().getSystemService(Context.INPUT_METHOD_SERVICE);
-//			inputMethodManager.hideSoftInputFromWindow(getView().getApplicationWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
-			
-//			find(R.id.editText2).requestFocus();
+		case R.id.btn_dialog_test:
+			ModuleTestViewHolder testViewHolder = new ModuleTestViewHolder(getActivity());
+			testViewHolder.showInDialog();
 			
 			break;
 		default:

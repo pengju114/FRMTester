@@ -27,27 +27,12 @@
             android:layout_height="wrap_content"
             android:text="测试模式视图" />
 
-        <EditText
-            android:id="@+id/editText1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10" >
-
-            <requestFocus />
-        </EditText>
-
-        <EditText
-            android:id="@+id/editText2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10" />
 
         <Button
-            android:id="@+id/button_rminput"
-            style="?android:attr/buttonStyleSmall"
+            android:id="@+id/btn_dialog_test"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Remove Input" />
+            android:text="测试对话框Holder" />
 
     </LinearLayout>
 
