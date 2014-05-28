@@ -18,19 +18,12 @@ public class MainActivity extends BaseActivity implements AsyncExecutor<String>,
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-//		setContentView(R.layout.main);
-//		
-//		
-//		textView  =  (TextView) findViewById(R.id.textView1);
-//		
-//		assignClickListener(this, R.id.button1);
-		
 		NavigationViewHolder navigationViewHolder=new NavigationViewHolder(new FirstHolder(this));
 		setContentView(navigationViewHolder);
 	}
 
 	@Override
-	public String asyncExecute() {
+	public String execute() {
 		// TODO Auto-generated method stub
 		try {
 			Thread.sleep(2000);

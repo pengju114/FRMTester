@@ -16,7 +16,6 @@ import android.widget.TextView;
 import com.example.tester.R;
 import com.pj.core.AsyncExecutor;
 import com.pj.core.BaseActivity;
-import com.pj.core.BaseApplication;
 import com.pj.core.datamodel.DataWrapper;
 import com.pj.core.dialog.CacheableDialog;
 import com.pj.core.dialog.DialogListener;
@@ -59,7 +58,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		switch (v.getId()) {
 		case R.id.button_confirm:
 			getActivity().asyncExecute(this);
-			getActivity().showConfirmDialog(0,"嗯","你看吗？",this);
+			getActivity().showConfirmDialog(0,"嗯","你看吗？","OK","cancel",this);
 			break;
 		case R.id.button_executing:
 			getActivity().showExecutingDialog(0,"executing data",this);
@@ -75,7 +74,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 			HttpRequest request=new HttpRequest(getUrlByAction("s_login.action"), 1);
 			request.setParameter("email", "pj@a.com");
 			request.setParameter("password", "762354");
-			LogManager.log(request);
+			LogManager.i(request);
 			request.setHttpRequestListener(this);
 			request.startAsynchronousRequest();
 			
@@ -84,7 +83,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 			download();
 			break;
 		case R.id.button_input:
-			getActivity().showInputDialog(0,"你想说什么吗", "输入名字", "cc", "en", "des", "input","", this);
+			getActivity().showInputDialog(0,"你想说什么吗", "输入名字", "cc", "en", "OK", "Cancel", this);
 			break;
 		case R.id.button_stop:
 			if (downloader!=null) {
@@ -199,9 +198,9 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 
 	
 	@Override
-	public List<DataWrapper> asyncExecute() {
+	public List<DataWrapper> execute() {
 		// TODO Auto-generated method stub
-		LogManager.log("线程开始",Thread.currentThread());
+		LogManager.i("线程开始",Thread.currentThread());
 		try {
 			Thread.sleep(10000);
 		} catch (Exception e) {
@@ -214,7 +213,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 	public void executeComplete(List<DataWrapper> value) {
 		// TODO Auto-generated method stub
 		checkBox.setChecked(true);
-		LogManager.log("线程返回"+Thread.currentThread(),value);
+		LogManager.i("线程返回"+Thread.currentThread(),value);
 	}
 
 	@Override
