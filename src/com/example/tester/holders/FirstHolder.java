@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 
 import com.example.tester.R;
 import com.pj.core.BaseActivity;
+import com.pj.core.BaseApplication;
+import com.pj.core.managers.LogManager;
 import com.pj.core.utilities.AppUtility;
 import com.pj.core.viewholders.ViewHolder;
 
@@ -26,7 +28,8 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 				R.id.btn_test_dlg,
 				R.id.btn_filp_test,
 				R.id.btn_module_test,
-				R.id.btn_dialog_test
+				R.id.btn_dialog_test,
+				R.id.btn_exemd_test
 				);
 		
 		getNavigationBar().setTitle("测试首页");
@@ -54,9 +57,25 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 			testViewHolder.showInDialog();
 			
 			break;
+			
+		case R.id.btn_exemd_test:
+			executeMethodInBackground(1000,this, "backgroundTask", (Object[])null);
+			
+			break;
 		default:
 			break;
 		}
+	}
+	
+	private void backgroundTask(){
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		LogManager.i("线程跑完");
+		executeMethodInMainThread(1000,this, "onClick", find(R.id.btn_module_test));
 	}
 	
 	@Override

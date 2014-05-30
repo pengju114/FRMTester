@@ -37,11 +37,12 @@ public final class R {
         public static final int tab_on=0x7f02000c;
     }
     public static final class id {
-        public static final int action_settings=0x7f09002e;
+        public static final int action_settings=0x7f09002f;
         public static final int btn_dialog_test=0x7f090027;
         public static final int btn_download=0x7f09001e;
+        public static final int btn_exemd_test=0x7f090028;
         public static final int btn_filp_test=0x7f090025;
-        public static final int btn_flip_back=0x7f090028;
+        public static final int btn_flip_back=0x7f090029;
         public static final int btn_module_test=0x7f090026;
         public static final int btn_test_dlg=0x7f090024;
         public static final int btn_update=0x7f090022;
@@ -52,7 +53,7 @@ public final class R {
         public static final int button_info=0x7f090015;
         public static final int button_input=0x7f090019;
         public static final int button_progress=0x7f090017;
-        public static final int button_show=0x7f09002d;
+        public static final int button_show=0x7f09002e;
         public static final int button_stop=0x7f09001f;
         public static final int button_web_req=0x7f09001a;
         public static final int c_btn_dialog_cancel=0x7f090006;
@@ -75,14 +76,14 @@ public final class R {
         public static final int c_text_dialog_input=0x7f090003;
         public static final int c_update_icon=0x7f090010;
         public static final int c_update_label=0x7f090011;
-        public static final int checkBox1=0x7f09002a;
+        public static final int checkBox1=0x7f09002b;
         public static final int chk_bpsp=0x7f09001d;
         public static final int editText1=0x7f090023;
         public static final int g_dialog_mid=0x7f090002;
-        public static final int nav_bar=0x7f09002c;
+        public static final int nav_bar=0x7f09002d;
         public static final int progress=0x7f090021;
-        public static final int progressBar1=0x7f09002b;
-        public static final int textView1=0x7f090029;
+        public static final int progressBar1=0x7f09002c;
+        public static final int textView1=0x7f09002a;
         public static final int text_state=0x7f090020;
     }
     public static final class layout {

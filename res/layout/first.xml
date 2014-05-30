@@ -34,6 +34,12 @@
             android:layout_height="wrap_content"
             android:text="测试对话框Holder" />
 
+        <Button
+            android:id="@+id/btn_exemd_test"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="调用方法测试" />
+
     </LinearLayout>
 
 </ScrollView>
