@@ -22,7 +22,7 @@ public class MainActivity extends BaseActivity implements AsyncExecutor<String>,
 		setContentView(navigationViewHolder);
 	}
 
-	@Override
+	
 	public String execute() {
 		// TODO Auto-generated method stub
 		try {
@@ -37,19 +37,16 @@ public class MainActivity extends BaseActivity implements AsyncExecutor<String>,
 		return "哈哈";
 	}
 
-	@Override
 	public void executeComplete(String value) {
 		// TODO Auto-generated method stub
 		textView.setText(value);
 	}
 
-	@Override
 	public void executePrepare() {
 		// TODO Auto-generated method stub
 	     textView.setText("executePrepare");
 	}
 
-	@Override
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		asyncExecute(this);

@@ -44,7 +44,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		setLayoutResource(R.layout.dialog_test);
 	}
 	
-	@Override
+	
 	protected void initialize(BaseActivity activity, View view) {
 		// TODO Auto-generated method stub
 		super.initialize(activity, view);
@@ -52,7 +52,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		getNavigationBar().setTitle("测试对话框");
 	}
 
-	@Override
+	
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
@@ -71,12 +71,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 			
 			break;
 		case R.id.button_web_req:
-			HttpRequest request=new HttpRequest(getUrlByAction("s_login.action"), 1);
-			request.setParameter("email", "pj@a.com");
-			request.setParameter("password", "762354");
-			LogManager.i(request);
-			request.setHttpRequestListener(this);
-			request.startAsynchronousRequest();
+			getActivity().showInputDialog(111, "输入网址", "输入详细网址", "OK", "Cancel", "http://127.0.0.1:8080/web-framework/client.service?service=10001&dataType=XML", "在此输入网址", this);
 			
 			break;
 		case R.id.btn_download:
@@ -116,7 +111,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		}
 	}
 	
-	@Override
+	
 	public String getUrlByAction(String action) {
 		// TODO Auto-generated method stub
 		return "http://mobile2.k3d.hk:8088/"+action;
@@ -133,7 +128,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		downloader.setHttpStateListener(this);
 		new Thread(new Runnable() {
 			
-			@Override
+			
 			public void run() {
 				// TODO Auto-generated method stub
 				try {
@@ -146,7 +141,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		}).start();
 	}
 	
-	@Override
+	
 	public void beforeHttpRequest(HttpRequest request) {
 		// TODO Auto-generated method stub
 		super.beforeHttpRequest(request);
@@ -154,16 +149,18 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		getActivity().showExecutingDialog(0,"正在登陆...",null);
 	}
 	
-	@Override
+	
 	public void onHttpResponse(HttpRequest request, HttpResult result) {
 		// TODO Auto-generated method stub
 		super.onHttpResponse(request, result);
 		if (isHttpSuccessAndNotify(result)) {
-			getActivity().showMessageDialog(0, "OK", result.getResponseData().toString(), null, null, null);
+			List<DataWrapper> list = result.getDataList();
+			getActivity().showMessageDialog(1, "服务器返回", list.toString(), "OK", null);
+//			getActivity().showMessageDialog(0, "OK", result.getResponseData().toString(), null, null, null);
 		}
 	}
 	
-	@Override
+	
 	public void onHttpRequestCancelled(HttpRequest request) {
 		// TODO Auto-generated method stub
 		super.onHttpRequestCancelled(request);
@@ -181,7 +178,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		}
 	}
 
-	@Override
+	
 	protected void onApplyView(View view) {
 		// TODO Auto-generated method stubViewGroup group=(ViewGroup)rootView;
 		ViewGroup group=(ViewGroup) view;
@@ -197,7 +194,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 	}
 
 	
-	@Override
+	
 	public List<DataWrapper> execute() {
 		// TODO Auto-generated method stub
 		LogManager.i("线程开始",Thread.currentThread());
@@ -209,30 +206,41 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		return new ArrayList<DataWrapper>();
 	}
 
-	@Override
+	
 	public void executeComplete(List<DataWrapper> value) {
 		// TODO Auto-generated method stub
 		checkBox.setChecked(true);
 		LogManager.i("线程返回"+Thread.currentThread(),value);
 	}
 
-	@Override
+	
 	public void onDialogClose(int requestCode, CacheableDialog dialog,
 			int triggerbtn, Object cacheData) {
 		// TODO Auto-generated method stub
 		if (triggerbtn==DialogListener.BTN_OK) {
 			getActivity().showTip(dialog.getObject(InputDialog.KEY_TEXT));
 		}
+		
+		if (requestCode == 111 && triggerbtn == DialogListener.BTN_OK) {
+			String url = (String) dialog.getObject(InputDialog.KEY_TEXT);
+			HttpRequest request = new HttpRequest(url, 1);
+			request.setMethod(HttpRequest.METHOD_GET);
+			request.setHttpRequestListener(this);
+			
+			request.setResponseDataFormat(HttpRequest.FORMAT_XML);
+			
+			request.startAsynchronousRequest();
+		}
 	}
 
-	@Override
+	
 	public void httpStateChange(int state, HttpState httpState,
 			HttpDownloader downloader, String statusText) {
 		// TODO Auto-generated method stub
 		postMessage(state, httpState);
 	}
 
-	@Override
+	
 	public void executePrepare() {
 		// TODO Auto-generated method stub
 		

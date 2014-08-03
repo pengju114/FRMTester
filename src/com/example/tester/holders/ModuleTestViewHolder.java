@@ -19,7 +19,7 @@ public class ModuleTestViewHolder extends ViewHolder implements View.OnClickList
 		setLayoutResource(R.layout.module_test);
 	}
 	
-	@Override
+	
 	protected void initialize(BaseActivity activity, View view) {
 		// TODO Auto-generated method stub
 		super.initialize(activity, view);
@@ -34,7 +34,7 @@ public class ModuleTestViewHolder extends ViewHolder implements View.OnClickList
 	}
 
 
-	@Override
+	
 	protected void onApplyView(View view) {
 		// TODO Auto-generated method stub
 		getNavigationBar().attachToRelativeLayout((RelativeLayout)find(R.id.nav_bar));
@@ -42,7 +42,7 @@ public class ModuleTestViewHolder extends ViewHolder implements View.OnClickList
 	}
 
 
-	@Override
+	
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if (v.getId()==R.id.button_show) {
@@ -54,7 +54,7 @@ public class ModuleTestViewHolder extends ViewHolder implements View.OnClickList
 		closeModuleView(true);
 	}
 	
-	@Override
+	
 	public void onViewDidAppear(boolean animated) {
 		// TODO Auto-generated method stub
 		super.onViewDidAppear(animated);

@@ -21,7 +21,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 		setLayoutResource(R.layout.first);
 	}
 
-	@Override
+	
 	protected void onApplyView(View view) {
 		// TODO Auto-generated method stub
 		assignClickListener(this, 
@@ -35,7 +35,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 		getNavigationBar().setTitle("测试首页");
 	}
 
-	@Override
+	
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
@@ -78,7 +78,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 		executeMethodInMainThread(1000,this, "onClick", find(R.id.btn_module_test));
 	}
 	
-	@Override
+	
 	public void onViewWillDisappear(boolean animated) {
 		// TODO Auto-generated method stub
 		super.onViewWillDisappear(animated);
@@ -86,7 +86,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 	}
 
 	
-	@Override
+	
 	protected String getShareActivityAction() {
 		// TODO Auto-generated method stub
 		return "com.activity.share";
