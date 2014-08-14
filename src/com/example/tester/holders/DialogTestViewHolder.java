@@ -9,6 +9,7 @@ import android.os.Parcelable;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -50,6 +51,16 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		super.initialize(activity, view);
 		
 		getNavigationBar().setTitle("测试对话框");
+		Button button = new Button(getActivity());
+		button.setText("测试登录");
+		button.setBackgroundResource(R.drawable.c_navigation_item_selector);
+		getNavigationBar().setNavigationRightView(button, new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				DialogTestViewHolder.this.getNavigationViewHolder().push(new LoginHolder(getActivity()), true);
+			}
+		});
 	}
 
 	
@@ -227,7 +238,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 			request.setMethod(HttpRequest.METHOD_GET);
 			request.setHttpRequestListener(this);
 			
-			request.setResponseDataFormat(HttpRequest.FORMAT_XML);
+			request.setResponseDataFormat(HttpRequest.RESPONSE_XML);
 			
 			request.startAsynchronousRequest();
 		}

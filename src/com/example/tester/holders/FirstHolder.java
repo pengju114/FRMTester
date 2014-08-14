@@ -25,8 +25,8 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 	protected void onApplyView(View view) {
 		// TODO Auto-generated method stub
 		assignClickListener(this, 
-				R.id.btn_test_dlg,
-				R.id.btn_filp_test,
+				R.id.btn_login,
+				R.id.btn_get_userinfo,
 				R.id.btn_module_test,
 				R.id.btn_dialog_test,
 				R.id.btn_exemd_test
@@ -39,11 +39,11 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
-		case R.id.btn_test_dlg:
+		case R.id.btn_login:
 			getNavigationViewHolder().push(new DialogTestViewHolder(getActivity()), true);
 			break;
 
-		case R.id.btn_filp_test:
+		case R.id.btn_get_userinfo:
 			FlipTestViewHolder flipTestViewHolder=new FlipTestViewHolder(getActivity());
 			flipTestViewHolder.showAsModuleViewByFlipping();
 			break;

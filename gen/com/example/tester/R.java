@@ -41,10 +41,10 @@ public final class R {
         public static final int btn_dialog_test=0x7f090027;
         public static final int btn_download=0x7f09001e;
         public static final int btn_exemd_test=0x7f090028;
-        public static final int btn_filp_test=0x7f090025;
         public static final int btn_flip_back=0x7f090029;
+        public static final int btn_get_userinfo=0x7f090025;
+        public static final int btn_login=0x7f090024;
         public static final int btn_module_test=0x7f090026;
-        public static final int btn_test_dlg=0x7f090024;
         public static final int btn_update=0x7f090022;
         public static final int button_confirm=0x7f090018;
         public static final int button_executing=0x7f090016;
@@ -80,10 +80,10 @@ public final class R {
         public static final int chk_bpsp=0x7f09001d;
         public static final int editText1=0x7f090023;
         public static final int g_dialog_mid=0x7f090002;
+        public static final int label_name=0x7f09002a;
         public static final int nav_bar=0x7f09002d;
         public static final int progress=0x7f090021;
         public static final int progressBar1=0x7f09002c;
-        public static final int textView1=0x7f09002a;
         public static final int text_state=0x7f090020;
     }
     public static final class layout {
@@ -96,8 +96,9 @@ public final class R {
         public static final int dialog_test=0x7f030006;
         public static final int first=0x7f030007;
         public static final int flip_module_test=0x7f030008;
-        public static final int main=0x7f030009;
-        public static final int module_test=0x7f03000a;
+        public static final int login=0x7f030009;
+        public static final int main=0x7f03000a;
+        public static final int module_test=0x7f03000b;
     }
     public static final class menu {
         public static final int main=0x7f080000;

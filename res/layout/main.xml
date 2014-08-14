@@ -9,16 +9,16 @@
     tools:context=".MainActivity" >
 
     <TextView
-        android:id="@+id/textView1"
+        android:id="@+id/label_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/hello_world" />
 
     <Button
-        android:id="@+id/btn_test_dlg"
+        android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/textView1"
+        android:layout_below="@+id/label_name"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="102dp"
         android:text="Button" />
@@ -27,7 +27,7 @@
         android:id="@+id/checkBox1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/btn_test_dlg"
+        android:layout_below="@+id/btn_login"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="54dp"
         android:text="CheckBox" />
@@ -37,7 +37,7 @@
         style="?android:attr/progressBarStyleLarge"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignRight="@+id/btn_test_dlg"
+        android:layout_alignRight="@+id/btn_login"
         android:layout_below="@+id/checkBox1"
         android:layout_marginTop="59dp" />
 

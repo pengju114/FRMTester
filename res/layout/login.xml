@@ -13,32 +13,21 @@
             android:id="@+id/btn_login"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="测试对话框" />
+            android:text="登录" />
 
         <Button
             android:id="@+id/btn_get_userinfo"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="测试翻转" />
-        
-        <Button
-            android:id="@+id/btn_module_test"
+            android:text="获取用户信息" />
+
+        <TextView
+            android:id="@+id/label_name"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:text="测试模式视图" />
-
-
-        <Button
-            android:id="@+id/btn_dialog_test"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="测试对话框Holder" />
-
-        <Button
-            android:id="@+id/btn_exemd_test"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="调用方法测试" />
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
     </LinearLayout>
 
