@@ -51,7 +51,7 @@ public class LoginHolder extends HttpViewHolder implements OnClickListener{
 			}
 		}else if (request.getRequestCode() == 2) {
 			if (isHttpSuccessAndNotify(result)) {
-				((TextView)find(R.id.label_name)).setText(result.getDataList().get(0).getString("name"));
+				((TextView)findViewById(R.id.label_name)).setText(result.getDataList().get(0).getString("name"));
 			}
 			
 		}

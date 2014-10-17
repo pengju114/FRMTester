@@ -37,7 +37,7 @@ public class ModuleTestViewHolder extends ViewHolder implements View.OnClickList
 	
 	protected void onApplyView(View view) {
 		// TODO Auto-generated method stub
-		getNavigationBar().attachToRelativeLayout((RelativeLayout)find(R.id.nav_bar));
+		getNavigationBar().attachToRelativeLayout((RelativeLayout)findViewById(R.id.nav_bar));
 		assignClickListener(this, R.id.button_show);
 	}
 
@@ -46,7 +46,7 @@ public class ModuleTestViewHolder extends ViewHolder implements View.OnClickList
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		if (v.getId()==R.id.button_show) {
-			find(R.id.editText1).requestFocus();
+			findViewById(R.id.editText1).requestFocus();
 //			getActivity().showTip(AppUtility.showInputSoft(find(R.id.editText1))+"");
 			return;
 		}

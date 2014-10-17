@@ -75,7 +75,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 			e.printStackTrace();
 		}
 		LogManager.i("线程跑完");
-		executeMethodInMainThread(1000,this, "onClick", find(R.id.btn_module_test));
+		executeMethodInMainThread(1000,this, "onClick", findViewById(R.id.btn_module_test));
 	}
 	
 	

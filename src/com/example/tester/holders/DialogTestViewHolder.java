@@ -89,7 +89,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 			download();
 			break;
 		case R.id.button_input:
-			getActivity().showInputDialog(0,"你想说什么吗", "输入名字", "cc", "en", "OK", "Cancel", this);
+			getActivity().showInputDialog(0,"你想说什么吗", null, "OK", "Cancel","", "please input some think", this);
 			break;
 		case R.id.button_stop:
 			if (downloader!=null) {
