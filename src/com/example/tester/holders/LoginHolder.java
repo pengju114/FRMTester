@@ -28,13 +28,13 @@ public class LoginHolder extends HttpViewHolder implements OnClickListener{
 		// TODO Auto-generated method stub
 		if (v.getId() == R.id.btn_login) {
 			HttpRequest request=makeRequest(1, "10003",null , "name","pengju","password","762354");
-			request.setExpectedDataFormat(HttpRequest.EXPRCTED_DATAWRAPPER);
+			request.setExpectedDataFormat(HttpRequest.EXPECTED_DATAWRAPPER);
 			request.setResponseDataFormat(HttpRequest.RESPONSE_JSON);
 			
 			asyncRequest(request);
 		}else if (v.getId() == R.id.btn_get_userinfo) {
 			HttpRequest request=makeRequest(2, "10004",null);
-			request.setExpectedDataFormat(HttpRequest.EXPRCTED_DATAWRAPPER);
+			request.setExpectedDataFormat(HttpRequest.EXPECTED_DATAWRAPPER);
 			request.setResponseDataFormat(HttpRequest.RESPONSE_JSON);
 			
 			asyncRequest(request);

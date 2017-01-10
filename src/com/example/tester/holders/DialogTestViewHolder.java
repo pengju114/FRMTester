@@ -24,6 +24,7 @@ import com.pj.core.dialog.InputDialog;
 import com.pj.core.managers.LogManager;
 import com.pj.core.managers.SDCardFileManager;
 import com.pj.core.res.Constants;
+import com.pj.core.utilities.ThreadUtility;
 import com.pj.core.viewholders.HttpViewHolder;
 import com.pj.core.http.HttpDownloader;
 import com.pj.core.http.HttpDownloader.HttpStateListener;
@@ -68,7 +69,7 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
 		case R.id.button_confirm:
-			getActivity().asyncExecute(this);
+			ThreadUtility.execute(this);
 			getActivity().showConfirmDialog(0,"嗯","你看吗？","OK","cancel",this);
 			break;
 		case R.id.button_executing:
@@ -153,10 +154,10 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 	}
 	
 	
-	public void beforeHttpRequest(HttpRequest request) {
+	@Override
+	public void onHttpRequestStart(HttpRequest request) {
 		// TODO Auto-generated method stub
-		super.beforeHttpRequest(request);
-		
+		super.onHttpRequestStart(request);
 		getActivity().showExecutingDialog(0,"正在登陆...",null);
 	}
 	
@@ -255,5 +256,12 @@ public class DialogTestViewHolder extends HttpViewHolder implements OnClickListe
 	public void executePrepare() {
 		// TODO Auto-generated method stub
 		
+	}
+
+
+	@Override
+	public boolean isExecuteCancel() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

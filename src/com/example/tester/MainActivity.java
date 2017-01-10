@@ -4,8 +4,10 @@ import com.example.tester.holders.FirstHolder;
 import com.pj.core.AsyncExecutor;
 import com.pj.core.BaseActivity;
 import com.pj.core.dialog.HolderDialog;
+import com.pj.core.utilities.ThreadUtility;
 import com.pj.core.viewholders.NavigationViewHolder;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
@@ -18,6 +20,7 @@ public class MainActivity extends BaseActivity implements AsyncExecutor<String>,
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+		setSystemBarTintColor(Color.parseColor("#ff0654"));
 		NavigationViewHolder navigationViewHolder=new NavigationViewHolder(new FirstHolder(this));
 		setContentView(navigationViewHolder);
 	}
@@ -49,6 +52,13 @@ public class MainActivity extends BaseActivity implements AsyncExecutor<String>,
 
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
-		asyncExecute(this);
+		ThreadUtility.execute(this);
+	}
+
+
+	@Override
+	public boolean isExecuteCancel() {
+		// TODO Auto-generated method stub
+		return false;
 	}
 }

@@ -9,8 +9,10 @@ import android.view.ViewGroup;
 import com.example.tester.R;
 import com.pj.core.BaseActivity;
 import com.pj.core.BaseApplication;
+import com.pj.core.annotation.MethodIdentifier;
 import com.pj.core.managers.LogManager;
 import com.pj.core.utilities.AppUtility;
+import com.pj.core.utilities.ThreadUtility;
 import com.pj.core.viewholders.ViewHolder;
 
 public class FirstHolder extends ViewHolder implements OnClickListener{
@@ -35,7 +37,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 		getNavigationBar().setTitle("测试首页");
 	}
 
-	
+	@MethodIdentifier(methodId=102)
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch (v.getId()) {
@@ -59,7 +61,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 			break;
 			
 		case R.id.btn_exemd_test:
-			executeMethodInBackground(1000,this, "backgroundTask", (Object[])null);
+			ThreadUtility.executeMethodInBackground(1000,this, 101, (Object[])null);
 			
 			break;
 		default:
@@ -67,6 +69,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 		}
 	}
 	
+	@MethodIdentifier(methodId=101)
 	private void backgroundTask(){
 		try {
 			Thread.sleep(3000);
@@ -75,7 +78,7 @@ public class FirstHolder extends ViewHolder implements OnClickListener{
 			e.printStackTrace();
 		}
 		LogManager.i("线程跑完");
-		executeMethodInMainThread(1000,this, "onClick", findViewById(R.id.btn_module_test));
+		executeMethodInMainThread(1000,this, 102, findViewById(R.id.btn_module_test));
 	}
 	
 	
